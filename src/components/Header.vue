@@ -15,7 +15,8 @@
 
 <script>
 export default{
-    name: "Header"
+    name: "Header",
+
 }
 </script>
 
