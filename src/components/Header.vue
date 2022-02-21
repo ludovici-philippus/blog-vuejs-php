@@ -1,51 +1,30 @@
 <template>
-    <header>
-        <div class="logo">
-            <router-link to="/"><h1>Blog</h1></router-link>
-        </div>
-        <nav>
-            <ul>
-                <li><router-link to="/">Posts</router-link></li>
-                <span style="color: white"> | </span> 
-                <li><router-link to="/sobre">Sobre</router-link></li>
-            </ul>
-        </nav>
-    </header>
+    <HeaderBar/>
+    <Categorias/>
+    <Busca :func="busca_pesquisa"/>
 </template>
 
 <script>
+import HeaderBar from "./HeaderBar.vue";
+import Categorias from "./Categorias.vue";
+import Busca from "./Busca.vue";
+
 export default{
     name: "Header",
-
+    props: ["pega_busca"],
+    components:{
+        HeaderBar,
+        Categorias,
+        Busca
+    },
+    methods:{
+        busca_pesquisa: function(busca){
+            this.pega_busca(busca);
+        }
+    }
 }
+
 </script>
 
 <style scoped>
-header{
-    background-color: steelblue;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-}
-
-nav{
-    margin-top: 8px;
-    font-size: 18px;
-}
-
-nav a:hover{
-    text-decoration: underline;
-}
-
-header a{
-    color: white;
-    text-decoration: none;
-}
-ul{
-    list-style: none;
-}
-
-li{
-    display: inline-block;
-}
 </style>

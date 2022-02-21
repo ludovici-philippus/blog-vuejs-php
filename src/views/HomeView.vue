@@ -1,7 +1,6 @@
 <template>
-    <Header/>
-    <Categorias/>
-    <Main/>
+    <Header :pega_busca="pega_busca"/>
+    <Main :busca="busca"/>
 </template>
 
 <script>
@@ -12,11 +11,21 @@ import Main from "../components/Main.vue";
 
 export default {
     name: 'HomeView',
+    data(){
+        return{
+            busca: ""
+        }
+    },
     components: {
         Header,
         Categorias,
         Main
     },
+    methods: {
+        pega_busca: function(busca){
+            this.busca = busca;
+        }
+    }
 
 
 }

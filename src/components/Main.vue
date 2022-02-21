@@ -14,15 +14,19 @@
 </template>
 
 <script>
+import { onUpdated } from 'vue';
 import Posts from "./Posts.vue";
 export default {
     name: "Main",
     components:{
         Posts
     },
+    props:{
+        busca: String,
+    },
     data(){
         return{
-            posts: []
+            posts: [],
         }
     },
     methods:{
@@ -38,6 +42,17 @@ export default {
     },
     mounted(){
         this.get_posts();
+    },
+    watch: {
+        busca: async function(){
+            const posts_fetch = await fetch("http://localhost/reactjs/api/get_posts.php?posts=true&busca="+this.busca).
+                then(function(response){
+                    return response.text();
+                    }).then(function(body){
+                        return JSON.parse(body);
+                    });
+            this.posts = posts_fetch;
+        }
     }
 }
 </script>
