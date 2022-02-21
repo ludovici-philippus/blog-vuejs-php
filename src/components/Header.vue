@@ -1,7 +1,7 @@
 <template>
     <HeaderBar/>
     <Categorias/>
-    <Busca :func="busca_pesquisa"/>
+    <Busca :get_value_text_input="busca_pesquisa"/>
 </template>
 
 <script>

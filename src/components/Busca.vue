@@ -8,7 +8,7 @@
 <script>
 export default{
     name: "Busca",
-    props: ["func"],
+    props: ["get_value_text_input"],
     data(){
         return{
             pesquisa: ""
@@ -18,7 +18,7 @@ export default{
         pesquisar: function(){
             const pesquisa_texto = document.querySelector("input").value;
             this.pesquisa = pesquisa_texto;
-            this.func(this.pesquisa)
+            this.get_value_text_input(this.pesquisa)
         },
     }
 }
@@ -42,5 +42,6 @@ button{
 width: 15%;
 height: 40px;
 border: 1px solid #ccc;
+cursor: pointer;
 }
 </style>
