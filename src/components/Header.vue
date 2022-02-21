@@ -1,7 +1,7 @@
 <template>
     <HeaderBar/>
-    <Categorias/>
-    <Busca :get_value_text_input="busca_pesquisa"/>
+    <Categorias v-if="this.$route.name != 'post'"/>
+    <Busca v-if="this.$route.name != 'post' && this.$route.name != 'sobre'" :get_value_text_input="busca_pesquisa"/>
 </template>
 
 <script>

@@ -32,6 +32,9 @@ export default {
 width: 33%;
 border: 10px solid #fff;
 text-align: center;
+display: flex;
+flex-direction: column;
+justify-content: space-between
 }
 
 .single_post a{

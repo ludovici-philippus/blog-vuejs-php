@@ -16,6 +16,8 @@ export default{
     },
     methods:{
         pesquisar: function(){
+            if(this.$route.path == "/sobre")
+                location.href = "/";
             const pesquisa_texto = document.querySelector("input").value;
             this.pesquisa = pesquisa_texto;
             this.get_value_text_input(this.pesquisa)

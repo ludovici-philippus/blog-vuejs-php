@@ -8,13 +8,13 @@
                 :slug_categoria="post.slug_categoria"
                 :slug_post="post.slug"
                 /> 
+
             </div>
         </section>
     </main>
 </template>
 
 <script>
-import { onUpdated } from 'vue';
 import Posts from "./Posts.vue";
 export default {
     name: "Main",
